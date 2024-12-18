@@ -1,0 +1,11 @@
+<main class="main">
+  <h1>Todo app</h1>
+  <app-new-todo></app-new-todo>
+  <ul>
+  @for (todo of (todos$ | async); track todo.id) {
+   <app-todo [todo]="todo"></app-todo>
+  } @empty {
+    <p>No todos created yet...</p>
+  }
+  </ul>
+</main>

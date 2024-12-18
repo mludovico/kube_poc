@@ -1,0 +1,60 @@
+.todo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #cdcdcd;
+}
+
+.todo-container .info {
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.todo-container .info input, textarea {
+  margin-bottom: 5px;
+  border: none;
+  border-bottom: 1px solid #cdcdcd;
+  box-decoration-break: revert;
+  resize: none;
+  font-size: 18px;
+  padding: 5px;
+}
+
+.todo-container .info textarea {
+  height: 80px;
+}
+
+.todo-container .info input.title {
+  font-weight: bold;
+  max-width: 30%;
+}
+
+.todo-container .actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #cdcdcd;
+}
+
+.todo-container .actions button {
+  margin-left: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+.positive {
+  background-color: #33cc33;
+}
+
+.danger {
+  background-color: red;
+}

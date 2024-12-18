@@ -1,0 +1,52 @@
+.todo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #cdcdcd;
+}
+
+.todo-container .info {
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-container .info span {
+    margin-bottom: 5px;
+}
+
+.todo-container .info span.title {
+    font-weight: bold;
+}
+
+.todo-container .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #cdcdcd;
+}
+
+.todo-container .actions button {
+  margin-left: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+.positive {
+    background-color: #33cc33;
+}
+
+.danger {
+    background-color: red;
+}
+
+.neutral {
+    background-color: #ffcc55;
+}

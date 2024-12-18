@@ -1,0 +1,30 @@
+<li class="todo-container">
+  <div class="info">
+    <span class="title" [class.completed]="todo.is_completed">
+      {{ todo.title }}
+      @if (isDevMode()) {
+        <button class="id" (click)="navigator.clipboard.writeText(todo.id ?? '')">({{ todo.id }})</button>
+      }
+    </span>
+    <span [class.completed]="todo.is_completed">{{ todo.description }}</span>
+  </div>
+  <div class="actions">
+    @if (!todo.is_completed) {
+      <button class="positive" (click)="complete()">
+              <span class="material-symbols-outlined">
+        check
+      </span>
+      </button>
+      <button class="neutral" (click)="edit()">
+              <span class="material-symbols-outlined">
+        edit
+      </span>
+      </button>
+    }
+    <button class="danger" (click)="delete()">
+            <span class="material-symbols-outlined">
+        delete
+      </span>
+    </button>
+  </div>
+</li>

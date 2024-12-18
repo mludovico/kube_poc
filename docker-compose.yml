@@ -1,0 +1,38 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres-container
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    networks:
+      - todo-network
+    ports:
+      - "5432:5432"
+  api:
+    image: todo-api:latest
+    container_name: todo-api-container
+    env_file: simple_go_app/.env
+    environment:
+      - DB_HOST=db
+    networks:
+      - todo-network
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+  web:
+    image: todo-app:latest
+    container_name: todo-app-container
+    env_file:
+      - simple-angular-app/.env
+    networks:
+      - todo-network
+    ports:
+      - "80:80"
+    depends_on:
+      - api
+
+networks:
+  todo-network:
+    driver: bridge
